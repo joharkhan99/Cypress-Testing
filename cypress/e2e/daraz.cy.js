@@ -32,14 +32,16 @@ it("Trying Fixtures to Login", () => {
 
 describe("Add to Cart", () => {
   it("should add a product to the cart", () => {
-    cy.wait(6000);
-    cy.visit("https://www.daraz.pk/");
+    // cy.wait(6000);
+    cy.get("#user-avatar").should("exist");
 
-    cy.get("#q").type("shirt");
+    cy.get("#q").type("Samsung");
     cy.get(".search-box__button--1oH7").click();
-    cy.get(".box--pRqdD").first().click();
+    // cy.get(".box--pRqdD").first().click();
+    cy.get(".c2prKC").eq(3).click();
     cy.wait(6000);
     cy.get(".pdp-button_theme_orange").click();
+    cy.get(".cart-icon").should("be.visible");
     // cy.get(".sc-AykKC").should("contain", "Product Name");
   });
 });

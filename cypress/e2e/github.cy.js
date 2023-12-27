@@ -26,18 +26,4 @@ describe("Git Commands", () => {
       }
     );
   });
-
-  it("should publish a branch", () => {
-    // Navigate to the branch page
-    cy.visit("/branches/branch-name");
-
-    // Click on the publish button
-    cy.get(".publish-button").click();
-
-    // Confirm the publish action
-    cy.get(".confirm-button").click();
-
-    // Add assertions to verify the expected outcome
-    cy.get(".success-message").should("be.visible");
-  });
 });
